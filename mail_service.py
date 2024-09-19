@@ -2,18 +2,6 @@
 import smtplib
 from email.mime.text import MIMEText
 
-# IMPORTANT: Add your data here
-sender = NotImplementedError()
-password = NotImplementedError()
-recipient = NotImplementedError()
-
-subject = "Email Subject"
-body = f"""\
-    Test message\n 
-    Best regards,
-    snufkin via {sender}
-"""
-
 
 def send_email(subject, body, sender, recipient, password):
     """
@@ -34,5 +22,3 @@ def send_email(subject, body, sender, recipient, password):
        smtp_server.login(sender, password)
        smtp_server.sendmail(sender, recipient, msg.as_string())
     print(f"{recipient} got mail!")
-
-send_email(subject, body, sender, recipient, password)
